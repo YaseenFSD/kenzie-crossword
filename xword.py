@@ -10,7 +10,7 @@ import re
 def find_words(word, list_source):
     """Input word with spaces as unknown && returns list of possible matches"""
     re_pattern = re.compile(r"^{}$".format(word.replace(" ", r"\w")))
-    return list(filter(re_pattern.match, list_source))
+    return filter(re_pattern.match, list_source)
     # YOUR HELPER FUNCTION GOES HERE
 
 
