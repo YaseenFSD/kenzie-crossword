@@ -8,7 +8,7 @@ import re
 
 
 def find_words(word, list_source):
-    """Takes in a word with spaces as unknown chars and returns list of possible matches"""
+    """Input word with spaces as unknown && returns list of possible matches"""
     re_pattern = re.compile(r"^{}$".format(word.replace(" ", r"\w")))
     return list(filter(re_pattern.match, list_source))
     # YOUR HELPER FUNCTION GOES HERE
@@ -17,8 +17,8 @@ def find_words(word, list_source):
 def main():
     with open('dictionary.txt') as f:
         words = f.read().split()
-    test_word = input(
-        'Please enter a word to solve.\nUse spaces to signify unknown letters: ').lower()
+    test_word = input("""Please enter a word to solve.\nUse spaces to signify unknown letters:
+""").lower()
     # YOUR ADDITIONAL CODE HERE
     print("Possible outcomes:")
     for word in find_words(test_word, words):
